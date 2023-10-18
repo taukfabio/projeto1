@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recipes',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,9 @@ ROOT_URLCONF = 'projeto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'recipes' / 'templates' / 'quiz'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +70,13 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = [
+    BASE_DIR / "recipes" / "static",
+    BASE_DIR / "recipes" / "templates" / "quiz",
+]
+
+print(STATICFILES_DIRS)
 
 WSGI_APPLICATION = 'projeto.wsgi.application'
 
