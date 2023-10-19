@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recipes',
+    'quiz',
 ]
 
 MIDDLEWARE = [
@@ -71,12 +72,6 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [
-    BASE_DIR / "recipes" / "static",
-    BASE_DIR / "recipes" / "templates" / "quiz",
-]
-
-print(STATICFILES_DIRS)
 
 WSGI_APPLICATION = 'projeto.wsgi.application'
 
@@ -127,6 +122,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "recipes" / "static",
+    BASE_DIR / "quiz" / "static",
+    BASE_DIR / 'base_static',
+]
+
+print(STATICFILES_DIRS)
+
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

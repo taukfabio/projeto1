@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.static import serve
 import os
 
-from recipes.views import home, contato, sobre, quiz_flutter
+from . import views
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,14 +15,10 @@ def flutter_redirect(request, resource):
 
 
 urlpatterns = [
-    path('recipes', home),
-    path('contato/', contato),
-    path('sobre/', sobre),
-    path('quiz/', quiz_flutter),
-    # path('', flutter_redirect),
-    path('', lambda r: flutter_redirect(r, 'index.html')),
-    path('<path:resource>', flutter_redirect),
-    path('web/', lambda r: flutter_redirect(r, 'index.html')),
+    path('recipes', views.home),
+    path('recipes/recipes/', views.recipes),
+    path('contato/', views.contato),
+    path('sobre/', views.sobre),
     
 
 ]

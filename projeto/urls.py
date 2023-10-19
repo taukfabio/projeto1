@@ -21,4 +21,10 @@ from django.urls import path, include
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('recipes.urls')),  # recipes   recipes\urls.py
+    # path('quiz/', views.quiz_flutter),
+    # path('', flutter_redirect),
+    # path('', lambda r: flutter_redirect(r, 'index.html')),
+    # path('<path:resource>', flutter_redirect),
+    # path('web/', lambda r: flutter_redirect(r, 'index.html')),
+    
 ]

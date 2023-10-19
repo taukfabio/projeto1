@@ -12,6 +12,12 @@ def home(request):
         'name': 'Fabio Tauk'
     })
 
+def recipes(request):
+
+    # return HttpResponse('Home! 2')
+    return render(request, 'recipes/pages/home.html', context={
+        'name': 'Fabio Tauk'
+    })
 
 def contato(request):
 
