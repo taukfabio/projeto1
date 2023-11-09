@@ -15,8 +15,8 @@ def flutter_redirect(request, resource):
 
 
 urlpatterns = [
-    path('recipes', views.home),
-    path('recipes/recipes/', views.recipes),
+    path('', views.home),
+    path('recipes/<int:id>/', views.recipe),
     path('contato/', views.contato),
     path('sobre/', views.sobre),
     
